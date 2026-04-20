@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Home Budget Tracker – Help</title>
+
+  <!-- IMPORTANT: keeps links inside the modal -->
+  <base target="_self">
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      font-size: 16px;
+      max-width: 900px;
+      margin: auto;
+      color: #222;
+    }
+
+    h1 {
+      position: sticky;
+      top: 0;
+      background: white;
+      padding: 10px 0;
+      z-index: 10;
+      border-bottom: 1px solid #ddd;
+      scroll-margin-top: 100px;
+    }
+
+    h2 {
+      margin-top: 2em;
+    }
+
+    p {
+      margin: 0.75em 0;
+    }
+
+    ul {
+      margin: 0.75em 0 0.75em 1.25em;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    hr {
+      margin: 24px 0;
+    }
+
+    a {
+      color: #0b5ed7;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .index {
+      background: #f8f9fa;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+
+    .index a {
+      display: block;
+      margin: 4px 0;
+    }
+
+    .section {
+      margin-bottom: 32px;
+    }
+
+    .note {
+      background: #f1f3f5;
+      padding: 10px 14px;
+      border-left: 4px solid #adb5bd;
+      margin: 16px 0;
+    }
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.modal-header h1 {
+  margin: 0;
+  border-bottom: none; /* Removing the old border-bottom from h1 */
+  padding: 0;
+  font-size: 24px;
+  position: static; /* Removing sticky for the header container */
+}
+
+/* Ensure the horizontal rule looks clean under the new header */
+hr.header-rule {
+  margin-top: 5px;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+    
+</style>
+ 
+</head>
+
+<body id="top">
+
+<div class="modal-header">
+  <h1>Help</h1>
+  <a href="#" onclick="window.close();" style="font-weight: bold; color: #0b5ed7;"></a>
+</div>
+
+<hr class="header-rule">
+
+<script>
+  if (location.hash) {
+    location.hash = "";
+  }
+</script>
+
+
+
+<hr>
+
+ 
+
+
+
+<div class="index">
+  <a href="#Overview">Overview</a>
+  <a href="#Setup">How to set up manually</a>
+  <a href="#csv">Import transactions via CSV</a>
+  <a href="#howdata">How data is stored</a>
+  <a href="#categories">Add/Edit categories</a>
+  <a href="#addtr">Add transactions</a>
+  <a href="#edit">Edit transactions</a>
+  <a href="#delete">Delete transactions</a>
+  <a href="#filter">Filter transactions</a>
+  <a href="#find">Find</a>
+  <a href="#salary-1">Salary -1 balances</a>
+  <a href="#negative">Negative balances</a>
+  <a href="#sort">Sort transactions</a>
+  <a href="#diary">Diary</a>
+  <a href="#14days">14 days</a>
+  <a href="#whatif">What If</a>
+  <a href="#offline">Offline mode</a>
+</div>
+
+<hr>
+
+<section id="Overview" class="section">
+<h2>Overview</h2>
+<p><strong>Day-Before-Payday Metric</strong><br>
+The app automatically calculates your minimum balance — the day before your next income — ensuring you never spend money already committed to bills.</p>
+
+<p><strong>Nudge System</strong><br>
+Adjust future transactions by a few days to align projections with real-world banking delays such as weekends and holidays.</p>
+
+<p><strong>Diary & Alerts</strong><br>
+Record future price changes or one-off events and receive alerts before they impact your balance.</p>
+
+<p><strong>What-If Stress Testing</strong><br>
+Add temporary income or expenses to see how they affect balances up to 24 months ahead.</p>
+
+<p><strong>Privacy-First</strong><br>
+All data is stored locally in your browser. No cloud, no tracking.</p>
+
+<a href="#top" class="back-to-top">↑ Back to Index</a>
+  
+</section>
+
+
+  
+</section>
+
+<section id="Setup" class="section">
+<h2>How to Set Up Manually</h2>
+<p>Enter a start date and opening balance, then save.</p>
+
+<div class="note">
+If your bank balance is £150 and you have £50 of transactions on that date, your opening balance should be £200.
+</div>
+
+<p>Add categories, then begin entering transactions.  
+Transactions immediately populate the 24-month projection.</p>
+
+<a href="#top" class="back-to-top">↑ Back to Index</a>
+  
+</section>
+
+<section id="diary" class="section">
+<h2>Diary</h2>
+<p>The Diary allows notes against past, present, and future dates.</p>
+
+<ul>
+  <li>Searchable entries</li>
+  <li>Alerts for future diary items</li>
+  <li>14-day upcoming diary view</li>
+  <li>Backup and restore support</li>
+</ul>
+
+<a href="#top" class="back-to-top">↑ Back to Index</a>
+  
+</section>
+
+<section id="14days" class="section">
+<h2>14 days</h2>
+<p>This button shows all diary entries for the next 14 days</p>
+<a href="#top" class="back-to-top">↑ Back to Index</a>
+  
+</section>
+  
+
+<section id="whatif" class="section">
+<h2>What If</h2>
+<p>Create hypothetical income or expense scenarios to see their impact.</p>
+
+<p>For example, adding a £100 monthly saving will immediately reflect in the projection and balance warnings.</p>
+
+<a href="#top" class="back-to-top">↑ Back to Index</a>
+  
+</section>
+
+<section id="sort" class="section">
+<h2>Sort Transactions</h2>
+<p>Click Date, Description, or Category headers to sort.  
+Click again to reverse order.</p>
+
+<a href="#top" class="back-to-top">↑ Back to Index</a>
+  
+</section>
+
+<section id="howdata" class="section">
+<h2>How Data Is Stored</h2>
+<p>All data is stored using browser local storage.</p>
+
+<ul>
+  <li>Persistent between sessions</li>
+  <li>Domain-specific and private</li>
+  <li>No expiration unless manually cleared</li>
+</ul>
+
+<a href="#top" class="back-to-top">↑ Back to Index</a>
+  
+</section>
+
+<section id="csv" class="section">
+<h2>Import Transactions via CSV</h2>
+<p>CSV import is the fastest way to populate the app.</p>
+
+<ul>
+  <li>Date (yyyy-mm-dd)</li>
+  <li>Amount (9.99)</li>
+  <li>Income/Expense (expense or income)</li>
+  <li>Category (create these first)</li>
+  <li>Description (text)</li>
+  <li>Frequency (Monthly / 4-Weekly)</li>
+</ul>
+
+<div class="note">
+Headers and values are case-sensitive and must match exactly.
+</div>
+
+<a href="#top" class="back-to-top">↑ Back to Index</a>
+  
+</section>
+
+<section id="categories" class="section">
+<h2>Add/Edit,Categories</h2>
+<p>Click <b>Edit/Add Categories & Transactions</b> button, under the <b>Add and Edit Categories</b>  section enter relevant details<p>
+<p>depending on whether you are adding a new category or renaming an existing category<p>
+<p>Changes immediately update projections.</p>
+
+<a href="#top" class="back-to-top">↑ Back to Index</a>
+  
+</section>
+
+<section id="addtr" class="section">
+<h2>Add Transactions</h2>
+<p>You can have 4 different 'types' of transactions<br>
+When adding, the popup allows you to select either <b>Irregular ⚡️, Monthly 🔁</b> or <b>4-Weekly 📅</b><br>
+If you chose an <b>end date</b> for the transaction, this becomes a <b>targeted 🎯</b> transaction</p>
+Most transactions would be <b>Monthly 🔁</b> or <b>4-Weekly 📅 </b>.
+<br>A <b>Targeted 🎯</b> transaction is one with a Start and End date
+This is mean for, eg, if you plan to have savings between two dates.<br>
+An <b>Irregular ⚡️</b> transaction is for one off income or expense items. You can have as many <b>Irregular ⚡️</b> transactions as needed.</p>
+Click <b>Edit/Add Categories & Transactions</b> button, under <b>Add Transaction</b> enter relevant details
+then click <b>Add</b>
+<p>Note This app is about <b>managing</b> your budget and is <b>forward</b> looking, your bank has a note of historical transactions
+so you don't <b>need</b> to keep transactions for more than a day or two in the past, therefore when you change the <b>start date</b> the app moves on
+and any Irregular ⚡️ and any other transactions 'disappear' from the app.<br>
+All changes immediately update the values and the view in the 24-Month Projection table.</p>
+
+<a href="#top" class="back-to-top">↑ Back to Index</a>
+  
+</section>
+
+<section id="edit" class="section">
+<h2>Edit Transactions</h2>
+<p>Click <b>Transaction</b> button, then <b>Edit</b> and make changes, then <b>Save</b> or <b>Cancel</b></p>
+<p>Changes immediately update projections.</p>
+
+<a href="#top" class="back-to-top">↑ Back to Index</a>
+  
+</section>
+
+<section id="delete" class="section">
+<h2>Delete Transactions</h2>
+<p>Click <b>Transaction</b> button, then <b>Delete</b> and confirm to permanently remove the transaction.</p>
+
+<a href="#top" class="back-to-top">↑ Back to Index</a>
+  
+</section>
+
+<section id="filter" class="section">
+<h2>Filter Transactions</h2>
+<p>Above the  <b>Transaction</b> table you have - All.   🔁 Monthly   📆 4-weekly   🎯 Targeted   ⚡️ Irregular<p>
+<p> This allows you to filter by <b>type</b> of transaction</p>
+<p>You can 'cycle' through each type if you want to, click <b>All</b> to view all transactions</p>
+
+<a href="#top" class="back-to-top">↑ Back to Index</a>
+  
+</section>
+
+<section id="negative" class="section">
+<h2>Negative Balances</h2>
+<p>Displays all future dates where balances drop below zero.</p>
+
+<a href="#top" class="back-to-top">↑ Back to Index</a>
+  
+</section>
+
+<section id="salary-1" class="section">
+<h2>Salary -1</h2>
+<p>Shows balances the day before each salary — the most critical risk point.</p>
+
+<a href="#top" class="back-to-top">↑ Back to Index</a>
+  
+</section>
+
+<section id="find" class="section">
+<h2>Find</h2>
+<p>Enter a text string to find within the 24-Month Projection table.</p>
+<p>If the string is found a count (eg 1/24) is displayed after the ◀️ ▶️ arrows.</p>
+<p>As each string is found, the relevant row is displayed and highlighted in yellow</p>
+<p>A cumulative total of the value of the transaction is displayed after the count of records found (eg 1/24).</p>
+
+<p>To clear the search criteria, click the <b>'x'</b> next to the input box</p>
+
+<a href="#top" class="back-to-top">↑ Back to Index</a>
+  
+</section>
+
+<section id="offline" class="section">
+<h2>Offline mode</h2>
+<p>Offline mode is where you do not have an internet connection</p>
+<p>If this is the case <span style="background-color: red;">Offline mode</span> is displayed top right of screen</p>
+<p>Note! because the app uses local storage, it will work perfectly fine in <b>Offline mode</b></p>
+
+
+<a href="#top" class="back-to-top">↑ Back to Index</a>
+  
+</section>
+
+
+</body>
+</html>
