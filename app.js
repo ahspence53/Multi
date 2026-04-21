@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
 /* ================= STORAGE ================= */
-const STORAGE_KEY = "budget";
+const STORAGE_KEY = "budget-multi";
 let categories = JSON.parse(localStorage.getItem("categories")) || [];
 let transactions = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; 
 let startDate = localStorage.getItem("startDate") || "";
