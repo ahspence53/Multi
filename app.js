@@ -1,8 +1,8 @@
 
 
-/* ================= DIARY HELPERS (GLOBAL) ======================= */
-/* test deployment */
 
+
+/* ================= DIARY HELPERS (GLOBAL) ======================= */
 
 
 window.hasDiaryNote = function (isoDate) {
@@ -22,8 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
 /* ================= STORAGE ================= */
+const STORAGE_KEY = "budget_multi";
 let categories = JSON.parse(localStorage.getItem("categories")) || [];
-let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
+let transactions = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; 
 let startDate = localStorage.getItem("startDate") || "";
 let openingBalance = parseFloat(localStorage.getItem("openingBalance")) || 0;
 let editingIndex = null;
@@ -36,6 +37,7 @@ let transactionFilterMode = null;
 // null | "monthly" | "4-weekly" | "targeted"
   
 /* ================= DOM ================ */
+
 const txCategorySelect = document.getElementById("tx-category");
 const newCategoryInput = document.getElementById("new-category");
 const addCategoryButton = document.getElementById("add-category");
@@ -312,7 +314,7 @@ diaryBtn.onclick = () => {
       tx.category = newName;
     }
   });
-  localStorage.setItem("transactions", JSON.stringify(transactions));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(transactions));
 
   editCategoryInput.value = "";
 
@@ -562,7 +564,7 @@ helpModal.addEventListener("click", e => {
 
 /* ================= TRANSACTIONS ================= */
 function saveTransactions() {
-  localStorage.setItem("transactions", JSON.stringify(transactions));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(transactions));
 }
 
 addTxButton.onclick = () => {
@@ -1306,7 +1308,7 @@ transactions.push({
 
 
     localStorage.setItem("categories", JSON.stringify(categories));
-    localStorage.setItem("transactions", JSON.stringify(transactions));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(transactions));
     updateCategoryDropdown();
     updateEditCategoryDropdown();
     renderTransactionTable();
@@ -1788,7 +1790,7 @@ document.addEventListener("mouseout", e => {
 /* =========== EXPORT TRANSACTIONS ============ */
   document.getElementById("export-transactions").onclick = () => {
   const transactions =
-    JSON.parse(localStorage.getItem("transactions")) || [];
+    JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
   const blob = new Blob(
     [JSON.stringify(transactions, null, 2)],
