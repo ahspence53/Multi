@@ -576,14 +576,15 @@ function saveTransactions() {
 
 addTxButton.onclick = () => {
   const tx = {
-    description: txDesc.value.trim(),
-    amount: parseFloat(txAmount.value) || 0,
-    type: txType.value,
-    frequency: txFrequency.value,
-    date: txDate.value,
-    endDate: txEndDate.value || null, // ← NEW
-    category: txCategorySelect.value
-  };
+  description: txDesc.value.trim(),
+  amount: parseFloat(txAmount.value) || 0,
+  type: txType.value,
+  frequency: txFrequency.value,
+  date: txDate.value,
+  endDate: txEndDate.value || null,
+  category: txCategorySelect.value,
+  account: txAccount ? txAccount.value : "Santander"
+};
 
   if (!tx.description) return alert("Description required");
   if (!tx.category) return alert("Category required");
