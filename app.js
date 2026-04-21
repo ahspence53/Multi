@@ -40,6 +40,8 @@ transactions = transactions.map(tx => ({
   ...tx
 }));
 // null | "monthly" | "4-weekly" | "targeted"
+
+console.log("Sample transaction:", transactions[0]);
   
 /* ================= DOM ================ */
 
