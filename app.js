@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
 /* ================= STORAGE ================= */
-const STORAGE_KEY = "budget_multi";
+const STORAGE_KEY = "budget";
 let categories = JSON.parse(localStorage.getItem("categories")) || [];
 let transactions = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; 
 let startDate = localStorage.getItem("startDate") || "";
@@ -1847,7 +1847,7 @@ document
 
      // Save transactions
 transactions = imported;
-localStorage.setItem("transactions", JSON.stringify(transactions));
+localStorage.setItem(STORAGE_KEY, JSON.stringify(transactions));
 
 // Rebuild categories from transactions
 categories = [
