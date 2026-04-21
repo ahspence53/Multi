@@ -34,6 +34,11 @@ let transactionSortAscending = true;
 let transactionSortMode = "date"; // "date" or "category"
 let inlineEditIndex = null;
 let transactionFilterMode = null; 
+
+transactions = transactions.map(tx => ({
+  account: tx.account || "Santander",
+  ...tx
+}));
 // null | "monthly" | "4-weekly" | "targeted"
   
 /* ================= DOM ================ */
