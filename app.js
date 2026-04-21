@@ -72,6 +72,8 @@ const txEndDate = document.getElementById("tx-end-date");
 
   const txAccount = document.getElementById("tx-account");
 
+  account: txAccount.value || "Santander",
+
   const CACHE_VERSION = "v1.5.5";
 const CACHE_NAME = `budget-app-${CACHE_VERSION}`;
 const APP_VERSION = `budget-app-${CACHE_VERSION}`;
