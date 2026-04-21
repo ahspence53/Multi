@@ -849,7 +849,12 @@ if (tx.frequency === "Targeted") tr.classList.add("freq-targeted");
   </div>
 </td>
 
-        <td>${tx.description}</td>
+      <td>
+  ${tx.description}
+  <div style="font-size:0.8em; opacity:0.6;">
+    ${tx.account || "Santander"}
+  </div>
+</td>
         <td>${tx.type}</td>
         <td>${tx.amount.toFixed(2)}</td>
         <td>${tx.category}</td>
