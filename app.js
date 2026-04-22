@@ -606,6 +606,18 @@ addTxButton.onclick = () => {
     transactions.push(tx);
   }
 
+  /* added for transfwrs*/
+  const txToAccount = document.getElementById("tx-to-account");
+
+txType.addEventListener("change", () => {
+  if (txType.value === "transfer") {
+    txToAccount.style.display = "inline-block";
+  } else {
+    txToAccount.style.display = "none";
+    txToAccount.value = "";
+  }
+});
+
   saveTransactions();
   renderTransactionTable();
   renderProjectionTable();
