@@ -609,6 +609,7 @@ addTxButton.onclick = () => {
   saveTransactions();
   renderTransactionTable();
   renderProjectionTable();
+  txAccount.value = "";
 
   txDesc.value = txAmount.value = txDate.value = "";
   txEndDate.value = "";   // ← ADD THIS
