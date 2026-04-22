@@ -618,6 +618,12 @@ txType.addEventListener("change", () => {
   }
 });
 
+  /*added*/
+  if (txType.value === "transfer" && !txToAccount.value) {
+  alert("Please select destination account");
+  return;
+}
+
   saveTransactions();
   renderTransactionTable();
   renderProjectionTable();
