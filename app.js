@@ -590,6 +590,11 @@ addTxButton.onclick = () => {
   if (!tx.category) return alert("Category required");
   if ((tx.frequency !== "irregular") && !tx.date)
     return alert("Start date required");
+/*account add*/
+  if (!txAccount.value) {
+  alert("Please select an account");
+  return;
+}
 
   if (editingIndex !== null) {
     transactions[editingIndex] = tx;
